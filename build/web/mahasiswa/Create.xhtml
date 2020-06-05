@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMahasiswaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{mahasiswaController.selected.id}" title="#{bundle.CreateMahasiswaTitle_id}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_nama}" for="nama" />
+                    <h:inputText id="nama" value="#{mahasiswaController.selected.nama}" title="#{bundle.CreateMahasiswaTitle_nama}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nama}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_nim}" for="nim" />
+                    <h:inputText id="nim" value="#{mahasiswaController.selected.nim}" title="#{bundle.CreateMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nim}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_angkatan}" for="angkatan" />
+                    <h:inputText id="angkatan" value="#{mahasiswaController.selected.angkatan}" title="#{bundle.CreateMahasiswaTitle_angkatan}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_angkatan}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_pertanyaan1}" for="pertanyaan1" />
+                    <h:inputText id="pertanyaan1" value="#{mahasiswaController.selected.pertanyaan1}" title="#{bundle.CreateMahasiswaTitle_pertanyaan1}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan1}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_pertanyaan2}" for="pertanyaan2" />
+                    <h:inputText id="pertanyaan2" value="#{mahasiswaController.selected.pertanyaan2}" title="#{bundle.CreateMahasiswaTitle_pertanyaan2}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan2}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_pertanyaan3}" for="pertanyaan3" />
+                    <h:inputText id="pertanyaan3" value="#{mahasiswaController.selected.pertanyaan3}" title="#{bundle.CreateMahasiswaTitle_pertanyaan3}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan3}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_pertanyaan4}" for="pertanyaan4" />
+                    <h:inputText id="pertanyaan4" value="#{mahasiswaController.selected.pertanyaan4}" title="#{bundle.CreateMahasiswaTitle_pertanyaan4}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan4}"/>
+                    <h:outputLabel value="#{bundle.CreateMahasiswaLabel_pertanyaan5}" for="pertanyaan5" />
+                    <h:inputText id="pertanyaan5" value="#{mahasiswaController.selected.pertanyaan5}" title="#{bundle.CreateMahasiswaTitle_pertanyaan5}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan5}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mahasiswaController.create}" value="#{bundle.CreateMahasiswaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mahasiswaController.prepareList}" value="#{bundle.CreateMahasiswaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateMahasiswaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

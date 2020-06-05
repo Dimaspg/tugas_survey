@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    
+    <h:head>
+ 
+        <link rel="stylesheet" type="text/css" href="css/opensans-font.css"/>
+	<link rel="stylesheet" type="text/css" href="fonts/line-awesome/css/line-awesome.min.css"/>
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css"/>
+	<!-- Main Style Css -->
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        
+        <title>Form Survei UKM</title>
+    </h:head>
+    <h:body class="form-v7">
+        <div class="page-content">
+		<div class="form-v7-content">
+			<div class="form-left">
+				<img src="images/form-v7.jpg" alt="form"/>
+				<p class="text-1">Survey UKM Mahasiswa Teknik Komputer Universitas Diponegoro
+                                    <br>
+                                        <br/>
+                                        <br/>
+                                        <button class="button" style="vertical-align:middle"><h:link outcome="/mahasiswa/List" value="Lihat Data"/></button>
+                                    </br>       
+                                </p>
+                                
+				<p class="text-2">Created by Rafli, Dimas, and Mulazi</p>
+			</div>
+			<h:form class="form-detail" id="myform">
+				<div class="form-row">
+                                        <h:outputLabel value="#{bundle.CreateMahasiswaLabel_nama}" for="nama" />
+                                        <h:inputText id="nama" class="input-text" value="#{mahasiswaController.selected.nama}" title="#{bundle.CreateMahasiswaTitle_nama}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nama}"/>
+					
+				</div>
+				<div class="form-row">
+                                        <h:outputLabel value="#{bundle.CreateMahasiswaLabel_nim}" for="nim" />
+                                        <h:inputText id="nim" class="input-text" value="#{mahasiswaController.selected.nim}" title="#{bundle.CreateMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nim}"/>
+                   
+				</div>
+				<div class="form-row">
+                                        <h:outputLabel value="#{bundle.CreateMahasiswaLabel_angkatan}" for="angkatan" />
+                                        <h:inputText id="angkatan" class="input-text" value="#{mahasiswaController.selected.angkatan}" title="#{bundle.CreateMahasiswaTitle_angkatan}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_angkatan}"/>
+                    
+				</div>
+                                <div class="form-row">
+                                        <h:outputLabel value="UKM yang anda ikuti" for="pertanyaan1" />
+                                        <h:inputText id="pertanyaan1" class="input-text" value="#{mahasiswaController.selected.pertanyaan1}" title="#{bundle.CreateMahasiswaTitle_pertanyaan1}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan1}"/>
+                    
+					</div>
+                                <div class="form-row">
+                                    <h:outputLabel value="Mengapa anda memilih UKM tersebut?" for="pertanyaan2" />
+                                    <h:inputText id="pertanyaan2" class="input-text" value="#{mahasiswaController.selected.pertanyaan2}" title="#{bundle.CreateMahasiswaTitle_pertanyaan2}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan2}"/>
+                   
+                                </div>
+                                <div class="form-row">
+                                     <h:outputLabel value="Kelebihan UKM yang Anda Ikuti??" for="pertanyaan3" />
+                                     <h:inputText id="pertanyaan3" class="input-text" value="#{mahasiswaController.selected.pertanyaan3}" title="#{bundle.CreateMahasiswaTitle_pertanyaan3}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan3}"/>
+                    
+                                </div>
+                                <div class="form-row">
+                                    <h:outputLabel value="Kekurangan UKM yang Anda Ikuti?" for="pertanyaan4" />
+                                    <h:inputText id="pertanyaan4" class="input-text" value="#{mahasiswaController.selected.pertanyaan4}" title="#{bundle.CreateMahasiswaTitle_pertanyaan4}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan4}"/>
+                    
+                                </div>
+                                <div class="form-row">
+                                    <h:outputLabel value="Kritik dan Saran buat UKM yang Anda Ikuti" for="pertanyaan5" />
+                                    <h:inputText id="pertanyaan5" class="input-text" value="#{mahasiswaController.selected.pertanyaan5}" title="#{bundle.CreateMahasiswaTitle_pertanyaan5}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_pertanyaan5}"/>
+                                </div>
+                            
+				<div class="form-row-last">
+                                        <h:commandLink class="btn btn-block" action="#{mahasiswaController.create}" value="Submit" />
+				</div>
+			</h:form>
+		</div>
+	</div>
+  
+        
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    </h:body>
+
+</html>
+

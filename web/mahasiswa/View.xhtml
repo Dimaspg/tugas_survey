@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMahasiswaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_id}"/>
+                    <h:outputText value="#{mahasiswaController.selected.id}" title="#{bundle.ViewMahasiswaTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_nama}"/>
+                    <h:outputText value="#{mahasiswaController.selected.nama}" title="#{bundle.ViewMahasiswaTitle_nama}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_nim}"/>
+                    <h:outputText value="#{mahasiswaController.selected.nim}" title="#{bundle.ViewMahasiswaTitle_nim}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_angkatan}"/>
+                    <h:outputText value="#{mahasiswaController.selected.angkatan}" title="#{bundle.ViewMahasiswaTitle_angkatan}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_pertanyaan1}"/>
+                    <h:outputText value="#{mahasiswaController.selected.pertanyaan1}" title="#{bundle.ViewMahasiswaTitle_pertanyaan1}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_pertanyaan2}"/>
+                    <h:outputText value="#{mahasiswaController.selected.pertanyaan2}" title="#{bundle.ViewMahasiswaTitle_pertanyaan2}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_pertanyaan3}"/>
+                    <h:outputText value="#{mahasiswaController.selected.pertanyaan3}" title="#{bundle.ViewMahasiswaTitle_pertanyaan3}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_pertanyaan4}"/>
+                    <h:outputText value="#{mahasiswaController.selected.pertanyaan4}" title="#{bundle.ViewMahasiswaTitle_pertanyaan4}"/>
+                    <h:outputText value="#{bundle.ViewMahasiswaLabel_pertanyaan5}"/>
+                    <h:outputText value="#{mahasiswaController.selected.pertanyaan5}" title="#{bundle.ViewMahasiswaTitle_pertanyaan5}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mahasiswaController.destroyAndView}" value="#{bundle.ViewMahasiswaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMahasiswaEditLink}"/>
+                <br />
+                <h:commandLink action="#{mahasiswaController.prepareCreate}" value="#{bundle.ViewMahasiswaCreateLink}" />
+                <br />
+                <h:commandLink action="#{mahasiswaController.prepareList}" value="#{bundle.ViewMahasiswaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMahasiswaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
